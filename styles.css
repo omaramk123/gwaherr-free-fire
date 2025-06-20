@@ -1,0 +1,166 @@
+/* الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+/* الأنماط الأساسية */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #0a0a1a;
+    color: #fff;
+    position: relative;
+    min-height: 100vh;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.imgur.com/JVJAXtG.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* القائمة العلوية */
+.navbar {
+    background-color: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #ff5722;
+}
+
+.points-counter {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* البطاقات الزجاجية */
+.glass-card {
+    background-color: rgba(13, 17, 23, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* صفحة الترحيب */
+.feature-item {
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+/* صفحة مشاهدة الإعلانات */
+.ad-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-placeholder {
+    text-align: center;
+    color: #aaa;
+}
+
+/* صفحة العناصر المتاحة */
+.item-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.item-image img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.item-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.item-price {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+/* تذييل الصفحة */
+footer {
+    background-color: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaa;
+}
+
+/* أزرار */
+.btn-primary {
+    background-color: #ff5722;
+    border-color: #ff5722;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #e64a19;
+    border-color: #e64a19;
+}
+
+.btn-outline-primary {
+    color: #ff5722;
+    border-color: #ff5722;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background-color: #ff5722;
+    border-color: #ff5722;
+}
+
+/* تأثيرات إضافية */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 87, 34, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 87, 34, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 87, 34, 0.5); }
+}
+
+.buy-btn {
+    animation: glow 2s infinite;
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .points-counter {
+        margin-bottom: 10px;
+    }
+}
+

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جواهر Free Fire Omar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    
+    <!-- القائمة العلوية -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">جواهر Free Fire Omar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="home-link">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="ads-link">مشاهدة الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="items-link">العناصر المتاحة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="history-link">سجل المشتريات</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="points-counter me-3">
+                        <i class="fas fa-coins text-warning"></i>
+                        <span id="points-display">0</span> نقطة
+                    </div>
+                    <button class="btn btn-outline-light" id="login-btn">تسجيل الدخول</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- صفحة الترحيب -->
+    <div class="container mt-5" id="welcome-page">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card glass-card">
+                    <div class="card-body text-center">
+                        <h1 class="mb-4">مرحباً بك في موقع جواهر Free Fire Omar</h1>
+                        <p class="lead">احصل على جواهر مجانية من خلال مشاهدة الإعلانات وتجميع النقاط</p>
+                        <div class="features mt-5">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="feature-item">
+                                        <i class="fas fa-eye fa-3x mb-3 text-primary"></i>
+                                        <h4>شاهد الإعلانات</h4>
+                                        <p>شاهد حتى 300 إعلان يومياً</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-item">
+                                        <i class="fas fa-coins fa-3x mb-3 text-warning"></i>
+                                        <h4>اجمع النقاط</h4>
+                                        <p>كل 3 إعلانات تمنحك نقطة واحدة</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-item">
+                                        <i class="fas fa-gem fa-3x mb-3 text-danger"></i>
+                                        <h4>احصل على الجواهر</h4>
+                                        <p>استبدل 100 نقطة بـ 100 جوهرة</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg mt-4" id="start-btn">ابدأ الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة تسجيل الدخول -->
+    <div class="container mt-5 d-none" id="login-page">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card glass-card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">تسجيل الدخول</h2>
+                        <form id="login-form">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">كلمة المرور</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                                <button type="button" class="btn btn-outline-primary" id="google-login-btn">
+                                    <i class="fab fa-google me-2"></i> تسجيل الدخول باستخدام Google
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة مشاهدة الإعلانات -->
+    <div class="container mt-5 d-none" id="ads-page">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card glass-card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">مشاهدة الإعلانات</h2>
+                        <p class="text-center">يمكنك مشاهدة حتى 300 إعلان يومياً. كل 3 إعلانات تمنحك نقطة واحدة.</p>
+                        
+                        <div class="progress mb-3">
+                            <div class="progress-bar" id="ads-progress" role="progressbar" style="width: 0%"></div>
+                        </div>
+                        
+                        <div class="text-center mb-4">
+                            <span id="ads-count">0</span> / 300 إعلان
+                        </div>
+                        
+                        <div class="ad-container mb-4">
+                            <div class="ad-placeholder" id="ad-display">
+                                <i class="fas fa-ad fa-5x mb-3"></i>
+                                <p>اضغط على الزر أدناه لمشاهدة إعلان</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" id="watch-ad-btn">مشاهدة إعلان</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة العناصر المتاحة -->
+    <div class="container mt-5 d-none" id="items-page">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card glass-card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">العناصر المتاحة</h2>
+                        <p class="text-center">استبدل نقاطك بجواهر Free Fire</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="item-card">
+                                    <div class="item-image">
+                                        <img src="item_image.png" alt="100 جوهرة">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>100 جوهرة</h4>
+                                        <p class="item-price">100 نقطة</p>
+                                        <button class="btn btn-primary buy-btn" data-item="100 جوهرة" data-price="100">شراء</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="item-card">
+                                    <div class="item-image">
+                                        <img src="item_image.png" alt="200 جوهرة">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>200 جوهرة</h4>
+                                        <p class="item-price">200 نقطة</p>
+                                        <button class="btn btn-primary buy-btn" data-item="200 جوهرة" data-price="200">شراء</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="item-card">
+                                    <div class="item-image">
+                                        <img src="item_image.png" alt="500 جوهرة">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>500 جوهرة</h4>
+                                        <p class="item-price">500 نقطة</p>
+                                        <button class="btn btn-primary buy-btn" data-item="500 جوهرة" data-price="500">شراء</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="item-card">
+                                    <div class="item-image">
+                                        <img src="item_image.png" alt="1000 جوهرة">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>1000 جوهرة</h4>
+                                        <p class="item-price">1000 نقطة</p>
+                                        <button class="btn btn-primary buy-btn" data-item="1000 جوهرة" data-price="1000">شراء</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة سجل المشتريات -->
+    <div class="container mt-5 d-none" id="history-page">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card glass-card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">سجل المشتريات</h2>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>التاريخ</th>
+                                        <th>العنصر</th>
+                                        <th>معرف اللاعب</th>
+                                        <th>النقاط المستخدمة</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="purchase-history">
+                                    <!-- سيتم إضافة السجلات هنا بواسطة JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mt-3" id="no-purchases">
+                            <p>لا توجد مشتريات سابقة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة إدخال معرف اللاعب -->
+    <div class="modal fade" id="player-id-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h5 class="modal-title">إدخال معرف اللاعب</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>الرجاء إدخال معرف اللاعب الخاص بك في Free Fire:</p>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="player-id" placeholder="أدخل معرف اللاعب">
+                    </div>
+                    <div class="d-none" id="purchase-details">
+                        <p>العنصر: <span id="modal-item-name"></span></p>
+                        <p>السعر: <span id="modal-item-price"></span> نقطة</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" id="confirm-purchase">موافق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة تأكيد الشراء -->
+    <div class="modal fade" id="purchase-success-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h5 class="modal-title">تم الشراء بنجاح</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
+                    <p>تم شراء <span id="success-item-name"></span> بنجاح!</p>
+                    <p>سيتم إرسال الجواهر إلى حسابك في Free Fire قريباً.</p>
+                    <p>معرف اللاعب: <span id="success-player-id"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">حسناً</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة فشل الشراء -->
+    <div class="modal fade" id="purchase-error-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h5 class="modal-title">خطأ في الشراء</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fas fa-times-circle text-danger fa-4x mb-3"></i>
+                    <p id="error-message">لا تملك نقاط كافية لإتمام عملية الشراء.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">حسناً</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 py-3">
+        <div class="container text-center">
+            <p>جميع الحقوق محفوظة © 2024 - موقع جواهر Free Fire Omar</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
